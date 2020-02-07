@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fm App</string>
+    <string name="connection_invaild_msg">Poor Internet Connection</string>
+    <string name="skip">Skip</string>
+    <string name="tab1">Meats</string>
+    <string name="tab2">Fish</string>
+    <string name="sortBy">Sort by</string>
+    <string name="filter">Filter</string>
+</resources>

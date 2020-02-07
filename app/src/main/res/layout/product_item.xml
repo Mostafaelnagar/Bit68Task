@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="productItemViewModels"
+            type="app.bt68.fmapp.products.itemViewModels.ProductItemViewModels" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp3h"
+        android:background="@color/white"
+        android:onClick="@{() -> productItemViewModels.itemAction()}">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp150h"
+            android:scaleType="fitXY"
+            android:src="@color/overlayBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:productImage="@{productItemViewModels.productsItem.productImg}" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp8h"
+            android:gravity="start"
+            android:text="@{productItemViewModels.productsItem.name}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8w"
+            android:layout_marginTop="@dimen/dp2h"
+            android:text="@{productItemViewModels.productsItem.weight}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp8w"
+            android:layout_marginTop="@dimen/dp2h"
+            android:text="@{productItemViewModels.productsItem.price}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text" />
+
+        <ImageView
+            android:id="@+id/plusIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp8h"
+            android:onClick="@{()->productItemViewModels.plusIconAction()}"
+            android:src="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/checkIcon"
+            android:layout_width="@dimen/dp20w"
+            android:layout_height="@dimen/dp20h"
+            android:layout_margin="@dimen/dp8h"
+            android:onClick="@{()->productItemViewModels.plusIconAction()}"
+            android:src="@drawable/correct"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
